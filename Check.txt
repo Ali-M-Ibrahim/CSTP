@@ -1,0 +1,47 @@
+      $data = department::create(['name'=>'test','description'=>'test']);
+      $data = department::create($request->all());
+
+     $data= department::find(5);
+     $data->fill($request->all());
+    if($data->isClean()){
+        return "nothing to change";
+     };
+
+   $data->save();
+
+
+
+
+
+        $tags = tag::all();
+//        $tags= tag::whereIn("id",array(1,2,3))->get();
+//        $tags= tag::whereIn("id",array(1,2,3))->update(['name'=>"new name"]);
+//        $tags= tag::whereIn("id",array(10,20,32))->orWhere("name","Ahmad")->get();
+//        $tags= tag::where("name","ahmad2")->count();
+//        $tags= tag::where("name","ahmad")->max('id');
+//          $tags= tag::whereBetween("id",[1,10])->get();
+//        $tags= tag::where("name","ahmad")->min('id');
+
+//        $tags= tag::where("name","ahmad")->first();
+//        $tags= tag::firstWhere("name","ahmad");
+//        $tags= tag::findOrFail(12);
+
+
+//        $tags= tag::findOr(12,  function(){
+//            return "haha not found";
+//        });
+
+
+//        $tags= tag::where("name","ahmadqq")->firstOr(function(){
+//            return "haha not found";
+//        });
+//        $tags= tag::whereIn("id",array(1,2,3))->get()->take(1);
+//        $tags= tag::whereIn("id",array(1,2,3))->select('name')->get();
+
+
+//      $joining = User::join("accounts",'users.id',"accounts.user_id")->get(['users.*','accounts.IBAN']);
+
+
+//        $tags = tag::select("name", DB::raw("count(*) as count"))->groupby("name")->get();
+
+//       $tags = tag::orderBy("id","desc")->get();

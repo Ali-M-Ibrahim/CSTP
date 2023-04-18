@@ -1,0 +1,60 @@
+to create one to one relationship:
+
+1) at the level of the migration we have to create the foreign key:
+
+unsignedbiginteger
+
+2) go to model:
+
+public function getXX(){
+
+return $this=>hasOne(Y::Class);
+}
+
+
+go to second model:
+
+public function getXX(){
+
+return $this=>belongsTo(X::Class,forein key, primary key);
+}
+
+one to many many to one:
+
+
+1) at the level of the migration we have to create the foreign key:
+
+unsignedbiginteger
+
+
+2) go to model:
+
+public function getXX(){
+
+return $this=>hasMany(Y::Class);
+}
+
+
+go to second model:
+
+public function getXX(){
+
+return $this=>belongsTo(X::Class,forein key, primary key);
+}
+
+many to many:
+
+1)create a pivot table
+2) 
+
+public function getY(){
+
+return $this=>belongsToMany(Y::Class, nameoftable, foreign key 1, foreign key 2);
+}
+
+
+
+public function getX(){
+
+return $this=>belongsToMany(X::Class, nameoftable, foreign key 2, foreign key 1);
+}
